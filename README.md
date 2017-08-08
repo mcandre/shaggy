@@ -4,6 +4,8 @@
 
 shaggy helps to download your shell scripts (AKA "scooby snacks") into a standard location, organizing the mess of scripts available today. shaggy can help install shell scripts in a variety of languages, including bash, zsh, ksh, and other POSIX compliant languages. In theory, one could use shaggy to manage nonPOSIX scripts, such as for csh, tcsh, fish, Python, and Ruby, though these are probably best dealt with by language-specific installers.
 
+shaggy does not require any particular package structure for your shell script files and folders. Just point shaggy to a GitHub repository and shaggy will place your project in a standard `$HOME/.scoobysnacks` parent directory, where you can `source` or execute your scripts as you wish. File permissions are copied from the git repository, so Windows users may want to be careful about getting the right read, write, and executable flags assigned to shell scripts.
+
 # EXAMPLES
 
 ```console
