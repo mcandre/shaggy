@@ -1,0 +1,65 @@
+#!/bin/sh
+
+VERSION="0.0.1"
+
+SCOOBYSNACKS="$HOME/.scoobysnacks"
+
+usage() {
+    echo "Usage: $0 <option>"
+    echo ""
+    echo "Options:"
+    echo ""
+    echo "install <package>"
+    echo "uninstall <package>"
+    echo "version"
+    echo "help"
+}
+
+install() {
+    if [ -z "$1" ]; then
+        usage
+        exit 1
+    fi
+
+    PACKAGE="$1"
+
+    git clone "https://github.com/${PACKAGE}.git" "${SCOOBYSNACKS}/${PACKAGE}"
+}
+
+uninstall() {
+    if [ -z "$1" ]; then
+        usage
+        exit 1
+    fi
+
+    PACKAGE="$1"
+
+    rm -rf "${SCOOBYSNACKS}/${PACKAGE}"
+}
+
+if [ "$#" -lt 1 ]; then
+    usage
+    exit 1
+fi
+
+COMMAND="$1"
+
+case "$COMMAND" in
+    "install")
+      install "$2"
+      ;;
+    "uninstall")
+      uninstall "$2"
+      ;;
+    "version")
+      echo "$VERSION"
+      ;;
+    "help")
+      usage
+      exit 0
+      ;;
+    *)
+      usage
+      exit 1
+      ;;
+esac
