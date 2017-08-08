@@ -80,6 +80,7 @@ $ make lint
 
 * [curl](https://curl.haxx.se) and [wget](https://www.gnu.org/software/wget/) are ideal for one-off script installation.
 * [bpkg](http://www.bpkg.sh) is an excellent package manager for bash-specific shell scripts.
+* [basher](https://github.com/basherpm/basher) is another bash-based shell script manager.
 * [fisherman](https://github.com/fisherman/fisherman) is a plugin manager for fish scripts.
 * [Antigen](http://antigen.sharats.me) is a plugin manager for zsh scripts.
 * [gem](https://rubygems.org) is better suited for managing Ruby shell scripts.
