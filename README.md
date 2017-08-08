@@ -51,7 +51,7 @@ export PATH="$PATH:$HOME/shaggy/lib"
 Then reload your shell configuration:
 
 ```console
-. "$HOME/.profile"
+$ . "$HOME/.profile"
 ```
 
 (Or whichever configuration file corresponds to your preferred shell.)
