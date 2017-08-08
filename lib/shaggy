@@ -34,7 +34,7 @@ uninstall() {
 
     PACKAGE="$1"
 
-    rm -rf "${SCOOBYSNACKS}/${PACKAGE}"
+    rm -rf "${SCOOBYSNACKS:?}/${PACKAGE:?}"
 }
 
 if [ "$#" -lt 1 ]; then
@@ -46,20 +46,20 @@ COMMAND="$1"
 
 case "$COMMAND" in
     "install")
-      install "$2"
-      ;;
+        install "$2"
+        ;;
     "uninstall")
-      uninstall "$2"
-      ;;
+        uninstall "$2"
+        ;;
     "version")
-      echo "$VERSION"
-      ;;
+        echo "$VERSION"
+        ;;
     "help")
-      usage
-      exit 0
-      ;;
+        usage
+        exit 0
+        ;;
     *)
-      usage
-      exit 1
-      ;;
+        usage
+        exit 1
+        ;;
 esac

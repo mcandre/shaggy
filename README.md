@@ -66,6 +66,9 @@ Then reload your shell configuration:
 
 * [make](https://www.gnu.org/software/make/)
 * [checkbashisms](https://sourceforge.net/projects/checkbaskisms/)
+* [bashate](https://pypi.python.org/pypi/bashate)
+* [shlint](https://rubygems.org/gems/shlint)
+* [ShellCheck](https://hackage.haskell.org/package/ShellCheck)
 
 # LINT
 
