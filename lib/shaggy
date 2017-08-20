@@ -45,21 +45,21 @@ fi
 COMMAND="$1"
 
 case "$COMMAND" in
-    "install")
-        install "$2"
-        ;;
-    "uninstall")
-        uninstall "$2"
-        ;;
-    "version")
-        echo "$VERSION"
-        ;;
-    "help")
-        usage
-        exit 0
-        ;;
-    *)
-        usage
-        exit 1
-        ;;
+"install")
+    install "$2"
+    ;;
+"uninstall")
+    uninstall "$2"
+    ;;
+"version")
+    echo "$VERSION"
+    ;;
+"help")
+    usage
+    exit 0
+    ;;
+*)
+    usage
+    exit 1
+    ;;
 esac
