@@ -13,4 +13,7 @@ checkbashisms:
 shellcheck:
 	stank lib | xargs shellcheck
 
-lint: shfmt bashate shlint checkbashisms shellcheck
+funk:
+	funk .
+
+lint: shfmt bashate shlint checkbashisms shellcheck funk
