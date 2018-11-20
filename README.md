@@ -66,7 +66,6 @@ $ . "$HOME/.profile"
 
 ## Optional
 
-* [make](https://www.gnu.org/software/make/)
 * [shfmt](https://github.com/mvdan/sh) (e.g. `go get github.com/mvdan/sh/cmd/shfmt`)
 * [bashate](https://pypi.python.org/pypi/bashate)
 * [shlint](https://rubygems.org/gems/shlint)
@@ -77,7 +76,7 @@ $ . "$HOME/.profile"
 # LINT
 
 ```console
-$ make lint
+$ sh build.sh
 ```
 
 # NOTABLE MENTIONS
