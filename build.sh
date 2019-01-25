@@ -2,23 +2,23 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-shfmt() {
+run_safety() {
+    safety check
+}
+
+run_shfmt() {
     stank lib | xargs shfmt -w -i 4
 }
 
-bashate() {
+run_bashate() {
     stank lib | xargs bashate
 }
 
-shlint() {
-    stank lib | xargs shlint
-}
-
-checkbashisms() {
+run_checkbashisms() {
     stank lib | xargs checkbashisms -n -p
 }
 
-shellcheck() {
+run_shellcheck() {
     stank lib | xargs shellcheck
 }
 
@@ -33,37 +33,39 @@ funk_check() {
 }
 
 lint() {
-    shfmt &&
-    bashate &&
-    shlint &&
-    checkbashisms &&
-    shellcheck &&
+    run_safety &&
+    run_shfmt &&
+    run_bashate &&
+    run_checkbashisms &&
+    run_shellcheck &&
     editorconfig &&
     funk_check
 }
 
 for task in "$@"; do
     case "$task" in
-        shfmt)
-        shfmt
+    run_safety)
+        run_safety
         ;;
-        bashate)
-        bashate
+    run_shfmt)
+        run_shfmt
         ;;
-        shlint)
-        shlint
+    run_bashate)
+        run_bashate
         ;;
-        checkbashisms)
+    run_checkbashisms)
+        run_checkbashisms
         ;;
-        shellcheck)
+    run_shellcheck)
+        run_shellcheck
         ;;
-        editorconfig)
+    editorconfig)
         editorconfig
         ;;
-        funk_check)
+    funk_check)
         funk_check
         ;;
-        *)
+    *)
         lint
         ;;
     esac
