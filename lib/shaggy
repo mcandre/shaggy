@@ -1,4 +1,7 @@
 #!/bin/sh
+set -eu
+IFS="$(printf '%b_' '\n\t ')"
+IFS="${IFS%_}"
 
 VERSION="0.0.1"
 
